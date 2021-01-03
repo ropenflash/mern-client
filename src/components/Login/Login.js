@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Hide, View } from "grommet-icons";
 import { login } from "../../api/api";
 import { useRoute } from "../../context/route";
@@ -45,7 +45,7 @@ const Login = (props) => {
       if (response.data) {
         setAuthTokens(response.data.token);
         setPage({ title: "Users Table", isAdminPage: true, isLoggedin: true });
-        props.history.push('/users')
+        props.history.push("/users");
       } else {
         setIsError(true);
         setValue(defaultValue);
@@ -62,10 +62,9 @@ const Login = (props) => {
     }
   };
 
-  // useEffect(()=>{
-  //   setPage({title:"Admin Login", isAdminPage:true, isLoggedin:false})
-  // },[])
-
+  useEffect(() => {
+    setPage({ title: "Admin Login", isAdminPage: true, isLoggedin: false });
+  }, []);
 
   return (
     <div className="login-form">
