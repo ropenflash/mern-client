@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import { logout } from "../../api/api";
@@ -9,7 +9,6 @@ import wissen from "../../wissen.jpg";
 
 const OnHeaderNav = (props) => {
   const { setAuthTokens, authTokens } = useAuth();
-  const [setNewPage] = useState(false);
   const { page, setPage } = useRoute();
 
   const handleLogin = () => {
@@ -26,7 +25,6 @@ const OnHeaderNav = (props) => {
         isLoggedin: false,
       });
       setAuthTokens("");
-      setNewPage(true);
     }
   };
 
