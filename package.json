@@ -11,6 +11,7 @@
     "grommet": "^2.16.2",
     "grommet-icons": "^4.5.0",
     "grommet-theme-hpe": "^2.0.2",
+    "http-proxy-middleware": "^1.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-loader-spinner": "^3.1.14",
@@ -42,6 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://users-server-123.herokuapp.com"
+  }
 }

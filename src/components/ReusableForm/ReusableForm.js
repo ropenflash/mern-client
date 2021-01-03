@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { post } from "axios";
+import {submit} from '../../api/api'
 import './ReusableForm.css'
 import {
   Box,
@@ -27,7 +27,7 @@ export const ReusableForm = (props) => {
   const [isSubmitted,setIsSubmitted]=useState(false)
   const handleSubmit = async (e) => {
     try {
-      const response = await post("/users/submit", e.value);
+      const response = await submit(e.value);
       if(response.status===200){
         setValue(defaultValue)
         setIsSubmitted(true)

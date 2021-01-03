@@ -1,7 +1,7 @@
 import {get, post} from 'axios'
 
 export const getData= async(token)=>{
-    const users = await get('/users',{
+    const users = await get('/api/users',{
         headers: {
           Authorization: 'Bearer ' + token 
         }})
@@ -9,17 +9,17 @@ export const getData= async(token)=>{
 }
 
 export const login=async(body)=>{
-     const response= post('/login',body)
+     const response= post('/api/login',body)
      return response
 }
 
 export const submit=async(body)=>{
-    const response=await post('/users/submit',body)
+    const response=await post('/api/users/submit',body)
     return response
 }
 
 export const logout=async(token)=>{
-    const response =await get('/logout',{
+    const response =await get('/api/logout',{
         headers: {
           Authorization: 'Bearer ' + token
         }})
