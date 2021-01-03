@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Hide, View } from "grommet-icons";
 import { login } from "../../api/api";
 import { useRoute } from "../../context/route";
@@ -42,7 +42,6 @@ const Login = (props) => {
   const handleSubmit = async (e) => {
     try {
       const response = await login(e.value);
-      console.log('response', response)
       if (response.data) {
         setAuthTokens(response.data.token);
         setPage({ title: "Users Table", isAdminPage: true, isLoggedin: true });
@@ -63,9 +62,9 @@ const Login = (props) => {
     }
   };
 
-  useEffect(()=>{
-    setPage({title:"Admin Login", isAdminPage:true, isLoggedin:false})
-  },[])
+  // useEffect(()=>{
+  //   setPage({title:"Admin Login", isAdminPage:true, isLoggedin:false})
+  // },[])
 
 
   return (

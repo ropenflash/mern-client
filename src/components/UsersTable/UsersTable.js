@@ -20,6 +20,7 @@ const UsersTable = (props) => {
   const [isLoading,setIsLoading]= useState(true)
   const { authTokens } = useAuth();
 
+  
   useEffect(() => {
     let mounted = true
     getData(authTokens)
@@ -36,7 +37,7 @@ const UsersTable = (props) => {
       return function cleanup() {
         mounted = false
     }
-  }, []);
+  }, [authTokens]);
 
   if(isLoading){
    return ( 
